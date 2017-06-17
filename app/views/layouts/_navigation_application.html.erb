@@ -1,0 +1,18 @@
+<header class="container-fluid LeGarage-header--secondary">
+	<div class="container">
+		<%= link_to 'Le Garage', root_path, class: 'LeGarage-header--logo' %>
+		<div class="LeGarage-header--menu">
+			<%= link_to 'Accueil', root_path %>
+			<a href="#"> Le concept </a>
+			<a href="#"> Qui sommes-nous ? </a>
+			<a href="#"> Projets </a>
+			<% if user_signed_in? %>
+				<%= link_to current_user.name, user_path(current_user) %>
+				<%= link_to 'Deconnexion', destroy_user_session_path, method: :delete %>				
+				<img src="<%= current_user.image %>" alt="profile image" class="LeGarage-header--avatar">
+			<% else %>
+				<%= link_to "Connexion avec Linkedin", user_linkedin_omniauth_authorize_path %>
+			<% end %>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,19 @@
+.LeGarage--button {
+	padding: 15px;
+	border-radius: 4px;
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+    transition: all .15s ease;
+    border: none;
+    text-align: center;
+}
+
+.LeGarage--button-default {
+	background-color: #F55668;
+	color: #ffffff;
+	&:hover {
+		background-color: darken(#F55668, 2%);
+	}
+}

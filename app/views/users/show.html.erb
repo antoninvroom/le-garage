@@ -1,0 +1,24 @@
+<div class="container-fluid LeGarage-user">
+	<div class="container">
+		<% if current_user.type_user === nil %>
+			<div class="LeGarage-user--warning">
+				Vous n'avez pas encore renseigné si vous êtes un CTO ou un porteur de projet, <%= link_to 'Faites le maintenant', edit_user_path(@user), class: 'LeGarage--special-link' %>
+			</div>
+		<% end %>
+		<div class="col-md-3">
+			<div class="col-md-12 LeGarage-user--sidebar">
+				<h3> <%= @user.name %> </h3>
+				<p> <%= @user.location %> </p>
+				<p> <%= @user.headline %> </p>
+				<p class="LeGarage-user--badge"><%= @user.type_user %></p>
+			</div>
+			<% if @user === current_user %>
+				<%= link_to 'Éditer mon profile', edit_user_path(@user), class: 'col-md-12 LeGarage--button-default LeGarage--button LeGarage--button-user--modify' %>
+				<%= link_to 'Supprimer mon compte', user_path(@user), method: :delete, class: 'col-md-12 LeGarage--button-default LeGarage--button LeGarage--button-user' %>
+			<% end %>
+		</div>
+		<div class="col-md-9">
+
+		</div>
+	</div>
+</div>

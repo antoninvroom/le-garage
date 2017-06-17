@@ -1,0 +1,25 @@
+@mixin linear-gradient($deg, $begin, $end) {
+  background: -webkit-linear-gradient($deg, $begin, $end);
+  background: -o-linear-gradient($deg, $begin, $end);
+  background: -moz-linear-gradient($deg, $begin, $end);
+  background: linear-gradient($deg, $begin, $end);
+}
+
+.LeGarage-homepage {
+	.LeGarage-homepage--banner {
+		width: 100%;
+		max-width: 100%;
+		height: 100vh;
+		@include linear-gradient(80deg, #00c6ff, #0072ff);
+		padding: 15% 20%;
+		text-align: center;
+		color: #ffffff;
+		font-family: 'Montserrat-bold';
+		.moji {
+			font-size: 24px;
+		}
+		p {
+			font-family: 'Roboto', sans-serif;
+		}
+	}
+}

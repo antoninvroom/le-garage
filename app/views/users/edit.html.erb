@@ -1,0 +1,32 @@
+<div class="container-fluid LeGarage-user">
+	<div class="container">
+		<%= form_for @user, html: { class: 'form-horizontal' } do |f| %>
+			<div class="form-group">
+				<label> Email </label>
+				<%= f.email_field :email, class: 'form-control' %>
+			</div>
+			<div class="form-group">
+				<label> Name </label>
+				<%= f.text_field :name, class: 'form-control' %>
+			</div>
+			<div class="form-group">
+				<label> Description </label>
+				<%= f.text_field :headline, class: 'form-control' %>
+			</div>
+			<div class="form-group">
+				<label> Location </label>
+				<%= f.text_field :location, class: 'form-control' %>
+			</div>
+			<div class="form-group">
+				<label> CTO ou Porteur de projet </label>
+				<%= label :type_user, 'CTO' %>
+				<%= f.radio_button :type_user, 'CTO', :checked => true %>
+				<%= label :type_user, 'Porteur de projet' %>
+				<%= f.radio_button :type_user, 'project' %>
+			</div>
+			<div class="form-group">
+				<%= f.submit 'Envoyer', class: 'LeGarage--button-default LeGarage--button' %>
+			</div>
+		<% end %>
+	</div>
+</div>
